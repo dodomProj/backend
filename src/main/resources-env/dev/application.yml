@@ -1,14 +1,10 @@
-running: local
+running: dev
 domain: http://13.209.41.214:8080
 
 spring:
   profiles:
     include: common
     active: dev
-  h2:
-    console:
-      enabled: true
-      path: /h2
   datasource:
     url: ${datasource_url}
     username: ${datasource_username}
