@@ -12,6 +12,7 @@ import java.util.List;
 @Getter @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "tags")
 public class Tag extends BaseTimeEntity {
 
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
