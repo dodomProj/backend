@@ -1,7 +1,8 @@
 package com.duroop.dodom.appointment.service;
 
-import com.duroop.dodom.appointment.entity.Appointment;
-import com.duroop.dodom.appointment.repository.AppointmentRepository;
+import com.duroop.dodom.domain.appointment.entity.Appointment;
+import com.duroop.dodom.domain.appointment.repository.AppointmentRepository;
+import com.duroop.dodom.domain.appointment.service.AppointmentService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;

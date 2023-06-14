@@ -1,8 +1,9 @@
 package com.duroop.dodom.counselor.service;
 
-import com.duroop.dodom.counselor.repository.CounselorRepository;
-import com.duroop.dodom.counselor.entity.Counselor;
-import com.duroop.dodom.score.entity.Score;
+import com.duroop.dodom.domain.counselor.repository.CounselorRepository;
+import com.duroop.dodom.domain.counselor.entity.Counselor;
+import com.duroop.dodom.domain.counselor.service.CounselorService;
+import com.duroop.dodom.domain.score.entity.Score;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
