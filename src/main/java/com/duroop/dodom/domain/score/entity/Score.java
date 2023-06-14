@@ -10,6 +10,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Getter @Setter
 @Builder
+@Table(name = "scores")
 public class Score extends BaseTimeEntity {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
