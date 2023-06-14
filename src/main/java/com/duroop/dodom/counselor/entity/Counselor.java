@@ -1,6 +1,7 @@
 package com.duroop.dodom.counselor.entity;
 
 import com.duroop.dodom.appointment.entity.Appointment;
+import com.duroop.dodom.audit.BaseTimeEntity;
 import com.duroop.dodom.score.entity.Score;
 import com.duroop.dodom.tag.entity.Tag;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -14,7 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter @Setter
-public class Counselor {
+public class Counselor extends BaseTimeEntity {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long counselorId;

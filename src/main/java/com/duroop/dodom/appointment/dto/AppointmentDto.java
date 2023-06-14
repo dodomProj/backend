@@ -11,7 +11,6 @@ public class AppointmentDto {
 
     @Builder @Getter
     public static class Post{
-        @Email
         private String email;
         @DateTimeFormat(pattern = "yyyy-MM-ddTHH:mm:ss")
         private LocalDateTime date;

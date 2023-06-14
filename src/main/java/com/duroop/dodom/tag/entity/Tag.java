@@ -1,5 +1,6 @@
 package com.duroop.dodom.tag.entity;
 
+import com.duroop.dodom.audit.BaseTimeEntity;
 import com.duroop.dodom.counselor.entity.Counselor;
 import lombok.*;
 
@@ -11,7 +12,7 @@ import java.util.List;
 @Getter @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Tag {
+public class Tag extends BaseTimeEntity {
 
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long tagId;

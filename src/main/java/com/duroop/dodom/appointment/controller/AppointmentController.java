@@ -27,7 +27,7 @@ public class AppointmentController {
     private final AppointmentService appointmentService;
     private final AppointmentMapper appointmentMapper;
     private final CounselorService counselorService;
-    public static final String DEFAULT_URI = "/appointments";
+    private static final String DEFAULT_URI = "/appointments";
 
     @PostMapping
     public ResponseEntity postAppointment(@Valid @RequestBody AppointmentDto.Post requestBody) {

@@ -1,5 +1,6 @@
 package com.duroop.dodom.appointment.entity;
 
+import com.duroop.dodom.audit.BaseTimeEntity;
 import com.duroop.dodom.counselor.entity.Counselor;
 import com.duroop.dodom.review.entity.Review;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -14,7 +15,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Getter @Setter
 @Builder
-public class Appointment {
+public class Appointment extends BaseTimeEntity {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long appointmentId;
@@ -24,8 +25,7 @@ public class Appointment {
     private String inquiry;
     private String method;
 
-    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JoinColumn(name = "review_id")
+    @OneToOne(mappedBy = "appointment", orphanRemoval = true)
     private Review review;
 
     @ManyToOne @JoinColumn(name = "counselor_id")
