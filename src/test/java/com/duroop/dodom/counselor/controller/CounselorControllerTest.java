@@ -1,4 +1,4 @@
-package com.duroop.dodom.counselor.controller;
-
-public class CounselorControllerTest {
-}
+//package com.duroop.dodom.counselor.controller;
+//
+//public class CounselorControllerTest {
+//}
