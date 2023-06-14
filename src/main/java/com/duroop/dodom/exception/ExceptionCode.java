@@ -23,11 +23,21 @@ public enum ExceptionCode {
      */
     COUNSELOR_NOT_FOUND(600,  "심리 상담사가 존재하지 않습니다."),
 
+    /**
+     * Appointment - 700
+     */
+    APPOINTMENT_NOT_FOUND(700, "예약된 상담이 존재하지 않습니다." ),
+
+    /**
+     * Review - 800
+     */
+    REVIEW_EXIST(801, "이미 리뷰가 작성되었습니다."),
 
     /**
      * Tag- 900
      */
     TAG_NOT_FOUND(900, "해당 아이디를 갖는 태그가 존재하지 않습니다.");
+
 
     @Getter
     private final int code;
