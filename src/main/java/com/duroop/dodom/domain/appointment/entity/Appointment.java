@@ -3,6 +3,7 @@ package com.duroop.dodom.domain.appointment.entity;
 import com.duroop.dodom.audit.BaseTimeEntity;
 import com.duroop.dodom.domain.appointmentTime.entity.AppointmentTime;
 import com.duroop.dodom.domain.counselor.entity.Counselor;
+import com.duroop.dodom.domain.result.entity.Result;
 import com.duroop.dodom.domain.review.entity.Review;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -26,7 +27,10 @@ public class Appointment extends BaseTimeEntity {
     private String name;
     private String contact;
     private String email;
-    private String result;
+
+    @OneToOne(mappedBy = "appointment", orphanRemoval = true)
+    private Result result;
+
     private String inquiry;
     private String method;
 
@@ -39,6 +43,4 @@ public class Appointment extends BaseTimeEntity {
     @OneToMany(mappedBy = "appointment")
     private List<AppointmentTime> time;
 
-//    @OneToMany(mappedBy = "volunteer", cascade = CascadeType.PERSIST, orphanRemoval = true)
-//    private List<Review> reviewList = new ArrayList<>();
 }

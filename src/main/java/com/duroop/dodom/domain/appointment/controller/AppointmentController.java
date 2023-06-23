@@ -7,6 +7,7 @@ import com.duroop.dodom.domain.appointment.service.AppointmentService;
 import com.duroop.dodom.domain.appointmentTime.service.AppointmentTimeService;
 import com.duroop.dodom.domain.counselor.entity.Counselor;
 import com.duroop.dodom.domain.counselor.service.CounselorService;
+import com.duroop.dodom.domain.result.service.ResultService;
 import com.duroop.dodom.util.UriUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -27,6 +28,7 @@ public class AppointmentController {
 
     private final AppointmentService appointmentService;
     private final AppointmentTimeService appointmentTimeService;
+    private final ResultService resultService;
     private final AppointmentMapper appointmentMapper;
     private final CounselorService counselorService;
     private static final String DEFAULT_URI = "/appointments";
@@ -37,6 +39,7 @@ public class AppointmentController {
         Appointment appointment = appointmentMapper.appointmentPostToAppointment(requestBody, counselor);
 
         Appointment createdAppointment = appointmentService.createAppointment(appointment);
+        resultService.createResult(createdAppointment.getAppointmentId(), requestBody.getType(), requestBody.getResult());
         appointmentTimeService.createAppointmentTime(createdAppointment.getAppointmentId(), requestBody.getTimeList());
         AppointmentDto.Response appointmentToAppointResponse = appointmentMapper.appointmentToAppointResponse(createdAppointment);
 
