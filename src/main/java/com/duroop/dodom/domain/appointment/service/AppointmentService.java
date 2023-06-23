@@ -2,6 +2,7 @@ package com.duroop.dodom.domain.appointment.service;
 
 import com.duroop.dodom.domain.appointment.entity.Appointment;
 import com.duroop.dodom.domain.appointment.repository.AppointmentRepository;
+import com.duroop.dodom.domain.appointmentTime.service.AppointmentTimeService;
 import com.duroop.dodom.email.EmailService;
 import com.duroop.dodom.exception.BusinessException;
 import com.duroop.dodom.exception.ExceptionCode;
