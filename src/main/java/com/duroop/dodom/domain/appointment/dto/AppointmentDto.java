@@ -17,6 +17,7 @@ public class AppointmentDto {
         private String email;
         @DateTimeFormat(pattern = "yyyy-MM-ddTHH:mm:ss")
         private List<LocalDateTime> timeList;
+        private String type;
         private String result;
         private String inquiry;
         private String method;

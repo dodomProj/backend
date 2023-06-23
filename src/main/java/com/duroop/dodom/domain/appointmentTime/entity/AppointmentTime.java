@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 public class AppointmentTime {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long appointmentTime;
+    private Long appointmentTimeId;
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime time;
     @ManyToOne @JoinColumn(name = "appointment_id")

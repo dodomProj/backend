@@ -16,7 +16,6 @@ public interface AppointmentMapper {
                 .email(requestBody.getEmail())
                 .name(requestBody.getName())
                 .contact(requestBody.getContact())
-                .result(requestBody.getResult())
                 .inquiry(requestBody.getInquiry())
                 .method(requestBody.getMethod())
                 .counselor(counselor)
