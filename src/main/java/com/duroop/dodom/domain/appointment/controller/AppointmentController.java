@@ -4,6 +4,7 @@ import com.duroop.dodom.domain.appointment.mapper.AppointmentMapper;
 import com.duroop.dodom.domain.appointment.dto.AppointmentDto;
 import com.duroop.dodom.domain.appointment.entity.Appointment;
 import com.duroop.dodom.domain.appointment.service.AppointmentService;
+import com.duroop.dodom.domain.appointmentTime.service.AppointmentTimeService;
 import com.duroop.dodom.domain.counselor.entity.Counselor;
 import com.duroop.dodom.domain.counselor.service.CounselorService;
 import com.duroop.dodom.util.UriUtil;
@@ -25,6 +26,7 @@ import java.net.URI;
 public class AppointmentController {
 
     private final AppointmentService appointmentService;
+    private final AppointmentTimeService appointmentTimeService;
     private final AppointmentMapper appointmentMapper;
     private final CounselorService counselorService;
     private static final String DEFAULT_URI = "/appointments";
@@ -35,6 +37,7 @@ public class AppointmentController {
         Appointment appointment = appointmentMapper.appointmentPostToAppointment(requestBody, counselor);
 
         Appointment createdAppointment = appointmentService.createAppointment(appointment);
+        appointmentTimeService.createAppointmentTime(createdAppointment.getAppointmentId(), requestBody.getTimeList());
         AppointmentDto.Response appointmentToAppointResponse = appointmentMapper.appointmentToAppointResponse(createdAppointment);
 
         URI uri = UriUtil.createUri(DEFAULT_URI, appointmentToAppointResponse.getAppointmentId());
