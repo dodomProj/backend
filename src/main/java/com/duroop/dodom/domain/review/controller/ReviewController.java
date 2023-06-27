@@ -9,6 +9,7 @@ import com.duroop.dodom.domain.review.service.ReviewService;
 import com.duroop.dodom.util.UriUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -25,7 +26,7 @@ public class ReviewController {
     private final ReviewService reviewService;
 
     @PostMapping
-    public ResponseEntity postReview(@RequestParam(value = "appointmentId") Long appointmentId,  @RequestBody ReviewDto.Post requestBody){
+    public ResponseEntity postReview(@RequestParam(value = "appointmentId") Long appointmentId,  @Validated @RequestBody ReviewDto.Post requestBody){
 
         Appointment appointment = appointmentService.findAppointment(appointmentId);
 

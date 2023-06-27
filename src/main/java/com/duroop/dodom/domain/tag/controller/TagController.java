@@ -6,6 +6,7 @@ import com.duroop.dodom.domain.tag.service.TagService;
 import com.duroop.dodom.util.UriUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +25,7 @@ public class TagController {
 
 
     @PostMapping
-    public ResponseEntity postTag(@Valid @RequestBody TagDto.Post requestBody) {
+    public ResponseEntity postTag(@Validated @RequestBody TagDto.Post requestBody) {
         Tag tag = Tag.builder()
                 .tagName(requestBody.getTagName())
                 .build();

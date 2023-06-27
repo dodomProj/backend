@@ -34,7 +34,7 @@ public class AppointmentController {
     private static final String DEFAULT_URI = "/appointments";
 
     @PostMapping
-    public ResponseEntity postAppointment(@Valid @RequestBody AppointmentDto.Post requestBody) {
+    public ResponseEntity postAppointment(@Validated @RequestBody AppointmentDto.Post requestBody) {
         Counselor counselor = counselorService.findCounselor(requestBody.getCounselorId());
         Appointment appointment = appointmentMapper.appointmentPostToAppointment(requestBody, counselor);
 

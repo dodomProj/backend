@@ -32,7 +32,7 @@ public class CounselorController {
 
 
     @PostMapping
-    public ResponseEntity postCounselor(@Valid @RequestBody CounselorDto.Post requestBody) {
+    public ResponseEntity postCounselor(@Validated @RequestBody CounselorDto.Post requestBody) {
         Tag tag = tagService.getTagById(requestBody.getTagId());
         Counselor counselor = counselorMapper.counselorPostToCounselor(requestBody, tag);
         counselor.setScore(new Score());
