@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotBlank;
+
 @AllArgsConstructor
 @Getter
 public class TagDto {
@@ -12,6 +14,7 @@ public class TagDto {
     @NoArgsConstructor
     @Getter
     public static class Post{
+        @NotBlank(message = "tagName must not be blank.")
         private String tagName;
     }
 }
