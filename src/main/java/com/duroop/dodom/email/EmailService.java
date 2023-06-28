@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class EmailService {
 
-    @Value("${domain}")
-    private String domain;
+    @Value("${s3domain}")
+    private String s3domain;
 
     private final JavaMailSender javaMailSender;
 
@@ -26,7 +26,7 @@ public class EmailService {
         mailMessage.setFrom("dodomsduroop@gmail.com");
         mailMessage.setTo(receiverEmail);
         mailMessage.setSubject("도돔에 대한 후기 작성");
-        mailMessage.setText("테스트입니다. 이곳에 리뷰 페이지 리다이렉트 링크가 들어갈 예정입니다.");
+        mailMessage.setText(s3domain + "/survey?appointmentId="+appointmentId);
         sendEmail(mailMessage);
     }
 }

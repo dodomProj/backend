@@ -34,15 +34,15 @@ public class AppointmentController {
     private static final String DEFAULT_URI = "/appointments";
 
     @PostMapping
-    public ResponseEntity postAppointment(@Validated @RequestBody AppointmentDto.Post requestBody) {
+    public ResponseEntity<?> postAppointment(@Validated @RequestBody AppointmentDto.Post requestBody) {
         Counselor counselor = counselorService.findCounselor(requestBody.getCounselorId());
         Appointment appointment = appointmentMapper.appointmentPostToAppointment(requestBody, counselor);
 
         Appointment createdAppointment = appointmentService.createAppointment(appointment);
         resultService.createResult(createdAppointment.getAppointmentId(), requestBody.getType(), requestBody.getResult());
         appointmentTimeService.createAppointmentTime(createdAppointment.getAppointmentId(), requestBody.getTimeList());
-        AppointmentDto.Response appointmentToAppointResponse = appointmentMapper.appointmentToAppointResponse(createdAppointment);
 
+        AppointmentDto.Response appointmentToAppointResponse = appointmentMapper.appointmentToAppointResponse(createdAppointment);
         URI uri = UriUtil.createUri(DEFAULT_URI, appointmentToAppointResponse.getAppointmentId());
         return ResponseEntity.created(uri).build();
     }
