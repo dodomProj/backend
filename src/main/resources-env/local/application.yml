@@ -1,5 +1,6 @@
 running: local
 domain: http://localhost:8080
+s3domain: http://dodom.s3-website.us-east-2.amazonaws.com
 
 spring:
   profiles:
