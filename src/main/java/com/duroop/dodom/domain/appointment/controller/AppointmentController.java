@@ -12,10 +12,7 @@ import com.duroop.dodom.util.UriUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.net.URI;
@@ -45,6 +42,13 @@ public class AppointmentController {
         AppointmentDto.Response appointmentToAppointResponse = appointmentMapper.appointmentToAppointResponse(createdAppointment);
         URI uri = UriUtil.createUri(DEFAULT_URI, appointmentToAppointResponse.getAppointmentId());
         return ResponseEntity.created(uri).build();
+    }
+
+    @GetMapping
+    public ResponseEntity<?> getAppointment(@RequestParam(value = "appointmentId") Long appointmentId){
+
+        AppointmentDto.reviewResponse response = appointmentService.getReviewAppointmentDto(appointmentId);
+        return ResponseEntity.ok().body(response);
     }
 
 

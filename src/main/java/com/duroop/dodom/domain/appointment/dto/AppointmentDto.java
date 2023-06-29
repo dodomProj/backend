@@ -1,5 +1,6 @@
 package com.duroop.dodom.domain.appointment.dto;
 
+import com.duroop.dodom.domain.counselor.entity.Counselor;
 import lombok.Builder;
 import lombok.Getter;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -34,5 +35,11 @@ public class AppointmentDto {
     @Getter
     public static class Response {
         private Long appointmentId;
+    }
+
+    @Builder @Getter
+    public static class reviewResponse{
+        private boolean reviewExist;
+        private Long counselorId;
     }
 }

@@ -17,8 +17,8 @@ public class ReviewDto {
     public static class Post{
         @NotBlank(message = "name must not be blank.")
         private String name;
-        @NotEmpty(message = "score must not be empty.") @Positive
-        private double score;
+        @NotNull(message = "score must not be empty.") @Positive
+        private Double score;
         private String review;
         private String review1;
         @NotNull(message = "agree must not be null.")
