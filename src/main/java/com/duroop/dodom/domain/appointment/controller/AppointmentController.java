@@ -19,7 +19,6 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/appointments")
-@Validated
 @RequiredArgsConstructor
 public class AppointmentController {
 

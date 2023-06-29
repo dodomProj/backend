@@ -1,6 +1,6 @@
 running: dev
 domain: http://13.209.41.214:8080
-s3domain: http://dodom.s3-website.us-east-2.amazonaws.com
+s3domain: https://dodom.site
 
 spring:
   profiles:
