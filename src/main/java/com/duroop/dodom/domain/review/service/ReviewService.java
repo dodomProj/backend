@@ -40,4 +40,9 @@ public class ReviewService {
             throw new BusinessException(ExceptionCode.REVIEW_EXIST);
         }
     }
+
+    public boolean existReviewByAppointmentId(Appointment appointment) {
+        Optional<Review> optional = reviewRepository.findReviewByAppointment(appointment);
+        return optional.isPresent();
+    }
 }

@@ -30,7 +30,6 @@ public class Appointment extends BaseTimeEntity {
 
     @OneToOne(mappedBy = "appointment", orphanRemoval = true)
     private Result result;
-
     private String inquiry;
     private String method;
 

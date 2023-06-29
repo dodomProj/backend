@@ -13,4 +13,6 @@ public interface ReviewRepository extends JpaRepository<Review, Long> {
     List<Review> findAllByAgreeIsTrue(Sort sort);
 
     Optional<Review> findReviewByAppointmentIs(Appointment appointment);
+
+    Optional<Review> findReviewByAppointment(Appointment appointment);
 }
