@@ -4,7 +4,7 @@
 
 **`팀 이름` :**  두룹<br/>
 **`프로젝트 기간` :** 2023.05.04. - 2023.06.30<br/>
-**`배포 링크`:** [dodom.site]((https://dodom.site/)) <br/>
+**`배포 링크`:** [dodom.site](https://dodom.site/) <br/>
 
 ## 🙋 Member
 |[강은서<br>(BE)](https://github.com/kdmstj)|[조윤희<br>(FE)](https://github.com/YUNH7)|[차세진<br>(FE)](https://github.com/chasj0326)|
@@ -35,12 +35,9 @@
 
 ## :notebook: Documentation
 
-[화면 정의서]()
+[API 명세서](https://documenter.getpostman.com/view/21233893/2s93sf3BQb)
 
-[ERD]()
-
-[API 명세서]()
-
+[ERD](https://dbdiagram.io/d/648265fa722eb77494a80290)
 
 <br/>
 
