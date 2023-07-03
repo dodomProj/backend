@@ -4,7 +4,7 @@
 
 **`팀 이름` :**  두룹<br/>
 **`프로젝트 기간` :** 2023.05.04. - 2023.06.30<br/>
-**`배포 링크`:** [jomnasae.site](http://abetterworld.s3-website.ap-northeast-2.amazonaws.com/) <br/>
+**`배포 링크`:** [dodom.site]([http://abetterworld.s3-website.ap-northeast-2.amazonaws.com/](https://dodom.site/)) <br/>
 
 ## 🙋 Member
 |[강은서<br>(BE)](https://github.com/kdmstj)|[조윤희<br>(FE)](https://github.com/YUNH7)|[차세진<br>(FE)](https://github.com/chasj0326)|
