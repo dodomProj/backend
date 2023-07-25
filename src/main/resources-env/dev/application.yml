@@ -4,8 +4,6 @@ s3domain: https://dodom.site
 
 
 spring:
-  config:
-    import: 'aws-parameterstore:'
   profiles:
     include: common
     active: dev
@@ -41,10 +39,5 @@ logging:
     org.hibernate.SQL: trace
     org.hibernate.type.descriptor.sql.BasicBinder: trace
 
-aws:
-  paramstore:
-    enabled: true
-    prefix: /config
-    profile-separator: _
-    name: duroop
+
 
