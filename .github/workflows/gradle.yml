@@ -35,8 +35,11 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
       
+    - name: Clean with Gradle
+      run: ./gradlew clean
+      
     - name: Build with Gradle
-      run: ./gradlew clean && ./gradlew build -Pprofile=dev 
+      run: ./gradlew build -Pprofile=dev 
         
     - name: Copy jar
       run: cp build/libs/dodom-0.0.1-SNAPSHOT.jar .
