@@ -5,14 +5,10 @@ s3domain: https://dodom.site
 
 spring:
   config:
-    profiles:
-      include: common
-      activate:
-        on-profile: dev
     import: 'aws-parameterstore:'
-#  profiles:
-#    include: common
-#    active: dev
+  profiles:
+    include: common
+    active: dev
   datasource:
     url: ${datasource_url}
     username: ${datasource_username}
