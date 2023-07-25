@@ -35,6 +35,9 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
       
+    - name : Check parmastore 
+      run: echo ${datasource_url}
+      
     - name: Clean with Gradle
       run: ./gradlew clean
       
