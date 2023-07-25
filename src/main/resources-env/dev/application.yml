@@ -2,10 +2,17 @@ running: dev
 domain: http://13.209.41.214:8080
 s3domain: https://dodom.site
 
+
 spring:
-  profiles:
-    include: common
-    active: dev
+  config:
+    profiles:
+      include: common
+      activate:
+        on-profile: dev
+    import: 'aws-parameterstore:'
+#  profiles:
+#    include: common
+#    active: dev
   datasource:
     url: ${datasource_url}
     username: ${datasource_username}
@@ -37,4 +44,11 @@ logging:
   level:
     org.hibernate.SQL: trace
     org.hibernate.type.descriptor.sql.BasicBinder: trace
+
+aws:
+  paramstore:
+    enabled: true
+    prefix: /config
+    profile-separator: _
+    name: duroop
 
