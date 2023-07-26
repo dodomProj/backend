@@ -1,12 +1,13 @@
 domain: http://13.209.41.214:8080
 s3domain: https://dodom.site
 
-
 spring:
   application:
     name: duroop
   config:
-    import: aws-parameterstore
+    #activate:
+     # on-profile: dev
+    import: 'aws-parameterstore:'
   datasource:
     url: ${datasource_url}
     username: ${datasource_username}
@@ -18,4 +19,10 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+aws:
+  paramstore:
+    enabled: true
+    prefix: /config
+    profile-separator: _
+    name: duroop
 
