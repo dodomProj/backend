@@ -36,13 +36,13 @@ jobs:
       run: chmod +x gradlew
       
     - name : Check parmastore 
-      run: echo ${datasource_url}
+      run: aws ssm get-parameters --names /config/duroop_dev/spring.datasource.url
       
     - name: Clean with Gradle
       run: ./gradlew clean
       
     - name: Build with Gradle
-      run: ./gradlew build -Pprofile=dev 
+      run: ./gradlew build
         
     - name: Copy jar
       run: cp build/libs/dodom-0.0.1-SNAPSHOT.jar .
