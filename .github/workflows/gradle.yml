@@ -19,6 +19,8 @@ permissions:
 
 env:
   S3_BUCKET_NAME: dodom-springboot
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   AWS_DEFAULT_REGION: ap-northeast-2
 
 jobs:
