@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active: dev
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${gmail_username}
+    password: ${gmail_password}
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
+            required: true
+          auth: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+logging:
+  level:
+    org.hibernate.SQL: trace
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+server:
+  servlet:
+    encoding:
+      force-response: true
+  error:
+    include-exception: true
+    include-stacktrace: always
+
+
+
