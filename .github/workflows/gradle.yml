@@ -15,9 +15,11 @@ on:
 
 permissions:
   contents: read
-  
+
+
 env:
   S3_BUCKET_NAME: dodom-springboot
+  AWS_DEFAULT_REGION: ap-northeast-2
 
 jobs:
   build:
