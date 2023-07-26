@@ -4,6 +4,10 @@ s3domain: https://dodom.site
 
 
 spring:
+  application:
+    name: duroop
+  config:
+    import: aws-parameterstore
   profiles:
     include: common
     active: dev
