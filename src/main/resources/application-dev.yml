@@ -7,7 +7,7 @@ spring:
   config:
     #activate:
      # on-profile: dev
-    import: 'aws-parameterstore:'
+    #import: 'aws-parameterstore:'
   datasource:
     url: ${datasource_url}
     username: ${datasource_username}
