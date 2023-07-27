@@ -49,7 +49,7 @@ jobs:
       run: chmod +x gradlew
     
     - name: Build with Gradle
-      run: ./gradlew clean without --stacktrace --info build
+      run: ./gradlew clean --stacktrace --info build
 
         
     - name: Copy jar
