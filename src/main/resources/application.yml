@@ -16,10 +16,10 @@ spring:
           connectiontimeout: 5000
           timeout: 5000
           writetimeout: 5000
-logging:
-  level:
-    org.hibernate.SQL: trace
-    org.hibernate.type.descriptor.sql.BasicBinder: trace
+#logging:
+ # level:
+    #org.hibernate.SQL: trace
+    #org.hibernate.type.descriptor.sql.BasicBinder: trace
 server:
   servlet:
     encoding:
@@ -27,6 +27,9 @@ server:
   error:
     include-exception: true
     include-stacktrace: always
+awsParameterStorePropertySource:
+  enabled: true
+
 
 
 

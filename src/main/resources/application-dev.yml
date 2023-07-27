@@ -4,10 +4,10 @@ s3domain: https://dodom.site
 spring:
   application:
     name: duroop
-  config:
+  #config:
     #activate:
      # on-profile: dev
-    import: 'aws-parameterstore:'
+    #import: 'aws-parameterstore:'
   datasource:
     url: ${datasource_url}
     username: ${datasource_username}
@@ -19,10 +19,10 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-aws:
-  paramstore:
-    enabled: true
-    prefix: /config
-    profile-separator: _
-    name: duroop
+#aws:
+#  paramstore:
+#    enabled: true
+#    prefix: /config
+#    profile-separator: _
+#    name: duroop
 
