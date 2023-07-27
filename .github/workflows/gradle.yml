@@ -47,16 +47,7 @@ jobs:
         mysql database: 'main'
         mysql user: 'admin' 
         mysql password: ${{ secrets.MYSQL_PASSWORD }} 
-
-      
-    - name: Setup MySQL
-      uses: samin/mysql-action@v1
-      with:
-          character set server: 'utf8' 
-          mysql database: 'main' 
-          mysql user: 'admin'
-          mysql password: ${{ secrets.MYSQL_PASSWORD }}
-      
+    
     - name: Build with Gradle
       run: ./gradlew clean build
         
