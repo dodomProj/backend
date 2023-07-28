@@ -36,13 +36,21 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '11'
-        distribution: 'temurin' 
+        distribution: 'temurin'
+        
+    - name: Setup MySQL
+      uses: mirromutth/mysql-action@v1.1
+      with:
+          mysql database: 'main' 
+          mysql user: 'admin'
+          mysql password: ${{ secrets.MYSQL_PASSWORD }}
       
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-      
+    
     - name: Build with Gradle
-      run: ./gradlew clean build
+      run: ./gradlew clean --stacktrace --info build
+
         
     - name: Copy jar
       run: cp build/libs/dodom-0.0.1-SNAPSHOT.jar .
