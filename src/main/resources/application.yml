@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: dev
+    active: local
   mail:
     host: smtp.gmail.com
     port: 587
@@ -27,8 +27,12 @@ server:
   error:
     include-exception: true
     include-stacktrace: always
-awsParameterStorePropertySource:
-  enabled: true
+cloud:
+  aws:
+    credentials:
+      accessKey : ${aws_access_key_id}
+      secretKey : ${aws_secret_access_key}
+
 
 
 
